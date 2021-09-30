@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab9898b969201fe51b1d374176691766",
+    "content-hash": "02e1e41054e91624f1e451761fc30092",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -554,6 +554,55 @@
                 }
             ],
             "time": "2020-12-29T14:50:06+00:00"
+        },
+        {
+            "name": "franjsco/crypto-fear-greed-index",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/franjsco/crypto-fear-greed-index-php.git",
+                "reference": "00ccd43798d6b6d9300f6be8c2bd82923dde8166"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/franjsco/crypto-fear-greed-index-php/zipball/00ccd43798d6b6d9300f6be8c2bd82923dde8166",
+                "reference": "00ccd43798d6b6d9300f6be8c2bd82923dde8166",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.3",
+                "php": "^7.2|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Franjsco\\CryptoFearGreedIndex\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "AGPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Francesco Esposito (franjsco)",
+                    "homepage": "https://franjsco.github.io/",
+                    "role": "developer"
+                }
+            ],
+            "description": "A PHP package to fetch Bitcoin Crypto Fear and Greed Index data from alternative.me",
+            "keywords": [
+                "api",
+                "bitcoin",
+                "client",
+                "cryptocurrency"
+            ],
+            "support": {
+                "issues": "https://github.com/franjsco/crypto-fear-greed-index-php/issues",
+                "source": "https://github.com/franjsco/crypto-fear-greed-index-php/tree/v0.1.0"
+            },
+            "time": "2021-09-30T15:16:32+00:00"
         },
         {
             "name": "fruitcake/laravel-cors",
