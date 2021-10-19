@@ -15,7 +15,7 @@ class SentimentData
     }
 
 
-    public function getSentimentData()
+    public function getSentiment()
     {
         return $this->client->getData();
     }
