@@ -14,7 +14,7 @@ class FeeData
     }
 
 
-    public function getFees()
+    public function getRecommendedFees()
     {
         return $this->client->getData();
     }
