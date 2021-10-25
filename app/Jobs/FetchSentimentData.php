@@ -10,11 +10,12 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Models\Sentiment;
 use App\Services\SentimentData;
+use Illuminate\Bus\Batchable;
 use Illuminate\Support\Facades\Log;
 
 class FetchSentimentData implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $extractionId;
 

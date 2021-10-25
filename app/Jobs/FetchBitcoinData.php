@@ -10,11 +10,11 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use App\Services\BitcoinData;
 use App\Models\BitcoinPrice;
-
+use Illuminate\Bus\Batchable;
 
 class FetchBitcoinData implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+    use Batchable, Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     private $extractionId;
 
@@ -35,6 +35,13 @@ class FetchBitcoinData implements ShouldQueue
      */
     public function handle()
     {
+
+        if ($this->batch()->cancelled()) {
+            // Detected cancelled batch...
+
+            return;
+        }
+
         $bitcoinData = new BitcoinData();
 
         $data = $bitcoinData->getCurrentData();
