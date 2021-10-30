@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Services\FeeData;
+use App\Api\FeeAPI;
 use App\Models\Fee;
 use Illuminate\Bus\Batchable;
 
@@ -35,7 +35,7 @@ class FetchFeeData implements ShouldQueue
      */
     public function handle()
     {
-        $feesData = new FeeData();
+        $feesData = new FeeAPI();
 
         $data = $feesData->getRecommendedFees();
 

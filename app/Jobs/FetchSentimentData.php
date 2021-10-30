@@ -8,8 +8,8 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Api\SentimentAPI;
 use App\Models\Sentiment;
-use App\Services\SentimentData;
 use Illuminate\Bus\Batchable;
 use Illuminate\Support\Facades\Log;
 
@@ -36,7 +36,7 @@ class FetchSentimentData implements ShouldQueue
      */
     public function handle()
     {
-        $sentimentData = new SentimentData();
+        $sentimentData = new SentimentAPI();
 
         $data = $sentimentData->getSentiment();
 

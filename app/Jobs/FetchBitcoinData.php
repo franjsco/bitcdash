@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
-use App\Services\BitcoinData;
+use App\Api\BitcoinAPI;
 use App\Models\BitcoinPrice;
 use Illuminate\Bus\Batchable;
 
@@ -42,7 +42,7 @@ class FetchBitcoinData implements ShouldQueue
             return;
         }
 
-        $bitcoinData = new BitcoinData();
+        $bitcoinData = new BitcoinAPI();
 
         $data = $bitcoinData->getCurrentData();
 

@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Jobs\FetchBitcoinData;
 use App\Jobs\FetchFeeData;
 use App\Jobs\FetchSentimentData;
+use App\Models\Extraction;
 use Illuminate\Bus\Batch;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Bus;
@@ -50,12 +51,14 @@ class FetchData extends Command
             new FetchBitcoinData($extractionId),
             new FetchSentimentData($extractionId),
             new FetchFeeData($extractionId)
-        ])->then(function (Batch $batch) {
-            //Log::info('Ok');
-            // TODO: inserire tabella estrazioni
+        ])->then(function(Batch $batch) use ($extractionId) {
+            // TODO: effettuare inserimento nella tabella estrazioni
+            Extraction::create([
+                "extraction_id" => $extractionId
+            ]);
         })->catch(function (Batch $batch) {
             // TODO: gestire errori
-            //Log::error('Problemi');
+            Log::error('Extraction failed');
         })->dispatch(); 
     }
 }
