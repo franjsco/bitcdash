@@ -18,6 +18,7 @@ class BitcoinRepository
         return DB::table('bitcoin_prices')
             ->join('sentiments', 'bitcoin_prices.extraction_id', '=', 'sentiments.extraction_id')
             ->join('fees', 'bitcoin_prices.extraction_id', '=', 'fees.extraction_id')
+            ->where('bitcoin_prices.extraction_id', '=', $uuid)
             ->first();
     }
 }
