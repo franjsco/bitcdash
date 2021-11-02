@@ -55,7 +55,7 @@ class FetchBitcoinData implements ShouldQueue
                 'market_cap' => $data['market_cap'][$currency],
                 'total_volume' => $data['total_volume'][$currency],
                 'high_24h' => $data['high_24h'][$currency],
-                'low_24h' => $data['high_24h'][$currency],
+                'low_24h' => $data['low_24h'][$currency],
                 'price_change_percentage_24h' => $data['price_change_percentage_24h'],
                 'price_change_percentage_7d' => $data['price_change_percentage_7d'],
                 'price_change_percentage_14d' => $data['price_change_percentage_14d'],
