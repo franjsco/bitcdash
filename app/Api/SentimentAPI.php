@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Services;
+namespace App\Api;
 
-use Franjsco\Bitcoinfees\Client;
+use Franjsco\CryptoFearGreedIndex\Client;
 
-class FeeData 
+class SentimentAPI
 {
+
     private $client;
 
     public function __construct()
@@ -14,7 +15,7 @@ class FeeData
     }
 
 
-    public function getRecommendedFees()
+    public function getSentiment()
     {
         return $this->client->getData();
     }

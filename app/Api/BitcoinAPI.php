@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services;
+namespace App\Api;
 
 use Codenixsv\CoinGeckoApi\CoinGeckoClient;
 
-class BitcoinData 
+class BitcoinAPI 
 {
     private $client = null;
     private $currencies = [];
