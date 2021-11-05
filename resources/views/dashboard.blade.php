@@ -407,25 +407,25 @@
     </style>
 </head>
 
-<body class="">
+<body class="bg-gray-800">
     <div class="m-4 flex">
         <img src="{{ asset('images/logo.svg')}}">
     </div>
 
 
 
-    <div class="flex flex-wrap mb-2">
+    <div class="flex flex-wrap mb-8">
 
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white border-b-8 border-yellow-600 rounded-lg shadow-lg p-8">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-coins fa-2x fa-inverse"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-gray-600">price</h5>
-                        <h3 class="font-bold text-3xl">{{ $data->price }} €</h3>
+                        <h5 class="font-bold text-md uppercase text-gray-600">price</h5>
+                        <h3 class="font-bold text-5xl">€ {{ number_format($data->price,2,',','.') }}</h3>
                     </div>
                 </div>
             </div>
@@ -434,42 +434,42 @@
 
         <div class="w-full md:w-1/1 xl:w-2/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white border-b-8 border-yellow-600 rounded-lg shadow-lg p-8">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
                         <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-percent fa-2x fa-inverse"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">24h</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_24h }}%</h3>
+                        <h3 class="font-bold text-red-600 text-xl">{{ $data->price_change_percentage_24h }}%</h3>
                     </div>
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">7d</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_7d }}%</h3>
+                        <h3 class="font-bold text-green-600 text-xl">{{ $data->price_change_percentage_7d }}%</h3>
                     </div>
 
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">14d</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_14d }}%</h3>
+                        <h3 class="font-bold text-red-600 text-xl">{{ $data->price_change_percentage_14d }}%</h3>
                     </div>
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">30d</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_30d }}%</h3>
+                        <h3 class="font-bold text-green-600 text-xl">{{ $data->price_change_percentage_30d }}%</h3>
                     </div>
 
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">60d</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_60d }}%</h3>
+                        <h3 class="font-bold text-green-600 text-xl">{{ $data->price_change_percentage_60d }}%</h3>
                     </div>
 
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">1y</h5>
-                        <h3 class="font-bold text-xl">{{ $data->price_change_percentage_1y}}%</h3>
+                        <h3 class="font-bold text-green-600 text-xl">{{ $data->price_change_percentage_1y}}%</h3>
                     </div>
                 </div>
             </div>
@@ -483,23 +483,23 @@
 
     </div>
 
-    <div class="flex flex-wrap mb-2">
+    <div class="flex flex-wrap mb-1">
 
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white rounded-lg shadow-lg p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-history fa-2x fa-inverse"></i></div>
+                        <div class="rounded-full p-5"><i class="fas fa-history fa-2x"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">low 24h</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->low_24h }} €</h3>
+                        <h3 class="font-bold text-xl">€ {{ number_format($data->low_24h, 2, ',', '.')  }}</h3>
                     </div>
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">high 24h</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->high_24h }} €</h3>
+                        <h3 class="font-bold text-xl">€ {{ number_format($data->high_24h, 2, ',', '.')  }}</h3>
                     </div>
                 </div>
             </div>
@@ -507,16 +507,36 @@
         </div>
 
 
-        <div class="w-full md:w-1/1 xl:w-1/3 p-6">
+        <div class="w-full md:w-1/1 xl:w-2/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white rounded-lg shadow-lg p-1">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-poll fa-2x fa-inverse"></i></div>
+                        <div class="rounded-full p-5"><i class="fas fa-chart-bar fa-2x"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-gray-600">Market Cap</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->market_cap }} €</h3>
+                        <h5 class="font-bold uppercase text-gray-600">Sentiment</h5>
+                         <!-- inizio reale -->
+                    <div class="flex-1 text-right md:text-center">
+                        <div class="relative pt-1">
+                            <div class="flex mb-2 items-center justify-between">
+                                <div>
+                                    <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-black-600 bg-green-200">
+                                        {{$data->value_classification}} - {{ $data->value }}
+                                    </span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs font-semibold inline-block text-black-600">
+                                        
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
+                                <div style="width: {{ $data->value}}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-600"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fine reale -->
                     </div>
                 </div>
             </div>
@@ -524,23 +544,7 @@
         </div>
 
 
-        <div class="w-full md:w-1/1 xl:w-1/3 p-6">
-            <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
-                <div class="flex flex-row items-center">
-                    <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-600"><i class="fas  fa-money-bill-wave fa-2x fa-inverse"></i></div>
-                    </div>
-                    <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-gray-600">Totale Volume</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->total_volume }} €</h3>
-                    </div>
-
-                    
-                </div>
-            </div>
-            <!--/Metric Card-->
-        </div>
+    </div>
 
 
 
@@ -549,18 +553,18 @@
 
     </div>
 
-    <div class="flex flex-wrap mb-2">
+    <div class="flex flex-wrap mb-1">
 
-        <div class="w-full md:w-1/1 xl:w-2/4 p-6">
+        <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white rounded-lg shadow-lg p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-chart-bar fa-2x fa-inverse"></i></div>
+                        <div class="rounded-full p-5"><i class="fas fa-poll fa-2x"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
-                        <h5 class="font-bold uppercase text-gray-600">Sentiment</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->value_classification }} - {{ $data->value }}</h3>
+                        <h5 class="font-bold uppercase text-gray-600">Market Cap</h5>
+                        <h3 class="font-bold text-xl">€ {{ number_format($data->market_cap, 2, ',', '.') }}</h3>
                     </div>
                 </div>
             </div>
@@ -568,33 +572,82 @@
         </div>
 
 
-
-        <div class="w-full md:w-1/1 xl:w-2/4 p-6">
+        <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <!--Metric Card-->
-            <div class="bg-white border-b-4 border-yellow-600 rounded-lg shadow-lg p-8">
+            <div class="bg-white rounded-lg shadow-lg p-2">
                 <div class="flex flex-row items-center">
                     <div class="flex-shrink pr-4">
-                        <div class="rounded-full p-5 bg-yellow-600"><i class="fas fa-hammer fa-2x fa-inverse"></i></div>
+                        <div class="rounded-full p-5"><i class="fas fa-percent fa-2x"></i></div>
+                    </div>
+                    <div class="flex-1 text-right md:text-center">
+                        <h5 class="font-bold uppercase text-gray-600">% Market Cap Change 24h</h5>
+                        <h3 class="font-bold text-green-600 text-xl">{{ $data->market_cap_change_percentage_24h }}%</h3>
+                    </div>
+                </div>
+            </div>
+            <!--/Metric Card-->
+        </div>
+
+
+        <div class="w-full md:w-1/1 xl:w-1/3 p-6">
+            <!--Metric Card-->
+            <div class="bg-white  rounded-lg shadow-lg p-2">
+                <div class="flex flex-row items-center">
+                    <div class="flex-shrink pr-4">
+                        <div class="rounded-full p-5"><i class="fas fa-money-bill-wave fa-2x"></i></div>
+                    </div>
+                    <div class="flex-1 text-right md:text-center">
+                        <h5 class="font-bold uppercase text-gray-600">Total Volume</h5>
+                        <h3 class="font-bold text-xl">€ {{ number_format($data->total_volume, 2, ',', '.') }}</h3>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+
+
+    <div class="flex flex-wrap mb-2">
+
+        <div class="w-full md:w-1/1 xl:w-1/1 p-6">
+            <!--Metric Card-->
+            <div class="bg-white  rounded-lg shadow-lg p-2">
+                <div class="flex flex-row items-center">
+                    <div class="flex-shrink pr-4">
+                        <div class="rounded-full p-5"><i class="fas fa-hammer fa-2x"></i></div>
                     </div>
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">Fastest Fee</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->fastest_fee }}</h3>
+                        <h3 class="font-bold text-xl">{{ $data->fastest_fee }}</h3>
                     </div>
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">Half hour Fee</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->half_hour_fee }}</h3>
+                        <h3 class="font-bold text-xl">{{ $data->half_hour_fee }}</h3>
                     </div>
 
                     <div class="flex-1 text-right md:text-center">
                         <h5 class="font-bold uppercase text-gray-600">Hour Fee</h5>
-                        <h3 class="font-bold text-2xl">{{ $data->hour_fee }}</h3>
+                        <h3 class="font-bold text-xl">{{ $data->hour_fee }}</h3>
                     </div>
                 </div>
             </div>
             <!--/Metric Card-->
         </div>
+
+
+
+
+
+
     </div>
+
+
     </div>
 </body>
 
