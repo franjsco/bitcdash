@@ -3,6 +3,7 @@
 namespace App\Api;
 
 use Codenixsv\CoinGeckoApi\CoinGeckoClient;
+use Config;
 
 class BitcoinAPI 
 {
@@ -10,9 +11,12 @@ class BitcoinAPI
     private $currencies = [];
     private $coinId = 'bitcoin';
 
-    function __construct($currencies = ['eur', 'usd'])
+    function __construct()
     {
-        $this->currencies = $currencies;
+        $this->currencies = array_map(function ($currency) {
+            return $currency["code"];
+        }, Config::get('currencies'));
+    
         $this->client = new CoinGeckoClient();
     }
 
