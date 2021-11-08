@@ -3,7 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
-
+use Config;
 class Price extends Component
 {
     /**
@@ -12,6 +12,7 @@ class Price extends Component
      * @var float
      */
     public $price;
+    public $currency;
 
     /**
      * Create a new component instance.
@@ -19,9 +20,24 @@ class Price extends Component
      * @param float $price
      * @return void
      */
-    public function __construct($price)
+    public function __construct($price, $currency)
     {
         $this->price = $price;
+        $this->currency = $currency;
+    }
+
+
+    public function getSymbol()
+    {
+        $currency1 = $this->currency;
+       
+        $symbol = array_merge(...array_filter(
+            Config::get('currencies'), 
+            function ($currency) use ($currency1) {
+                return $currency["code"] == $currency1;
+            }))["symbol"];
+
+        return $symbol;
     }
 
     /**

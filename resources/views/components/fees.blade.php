@@ -1,4 +1,4 @@
-<div class="bg-white  rounded-lg shadow-lg p-2">
+<div class="bg-white rounded-xl border-b-4 border-purple-600 shadow-lg p-2">
     <div class="flex flex-row items-center">
         <div class="flex-shrink pr-4">
             <div class="rounded-full p-5"><i class="fas fa-hammer fa-2x"></i></div>

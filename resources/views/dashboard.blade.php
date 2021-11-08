@@ -403,18 +403,22 @@
     <style>
         body {
             font-family: 'Nunito', sans-serif;
+            background-color: #031836;
         }
     </style>
 </head>
 
-<body class="bg-gray-800">
+<body class="">
     <div class="m-4 flex">
-        <img src="{{ asset('images/logo.svg')}}">
+        <img src="{{ asset('images/logo.svg')}}" width="18%">
     </div>
 
     <div class="flex flex-wrap mb-8">
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
-            <x-price :price="$data->price"></x-price>
+            <x-price 
+                :price="$data->price"
+                :currency="$currencyCode"    
+            ></x-price>
         </div>
         
         <div class="w-full md:w-1/1 xl:w-2/3 p-6">
@@ -434,6 +438,7 @@
             <x-low-high-price
                 :low24h="$data->low_24h"
                 :high24h="$data->high_24h"
+                :currency="$currencyCode"
             ></x-low-high-price>
         </div>
 
@@ -449,7 +454,10 @@
     <div class="flex flex-wrap mb-1">
 
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
-            <x-market-cap :market-cap="$data->market_cap"></x-market-cap>
+            <x-market-cap 
+                :market-cap="$data->market_cap"
+                :currency="$currencyCode"    
+            ></x-market-cap>
         </div>
 
 
@@ -463,11 +471,12 @@
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <x-volume
                 :volume="$data->total_volume"
+                :currency="$currencyCode" 
             >
             </x-volume>
         </div>
     </div>
-
+    
     
     <div class="flex flex-wrap mb-2">
         <div class="w-full md:w-1/1 xl:w-1/1 p-6">

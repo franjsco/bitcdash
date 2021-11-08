@@ -1,4 +1,4 @@
-<div class="bg-white rounded-lg shadow-lg p-1">
+<div class="bg-white border-b-4 border-purple-600 rounded-xl shadow-lg p-1">
     <div class="flex flex-row items-center">
         <div class="flex-shrink pr-4">
             <div class="rounded-full p-5"><i class="fas fa-chart-bar fa-2x"></i></div>
