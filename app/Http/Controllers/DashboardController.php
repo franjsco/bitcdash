@@ -10,16 +10,20 @@ class DashboardController extends Controller
     
     public function index(Request $request)
     {
+        $currencyCode =  $request->input('currency', 'usd');
+
         $extraction = ExtractionRepository::getLatestExtraction();
         
         $bitcoin = BitcoinRepository::getInformationByExtractionId(
             $extraction->extraction_id,
-            $request->input('currency', 'eur')
+            $currencyCode
         );
 
         if(!$bitcoin) return;
         
-        return view('dashboard')->with("data", $bitcoin);
+        return view('dashboard')
+            ->with('data', $bitcoin)
+            ->with('currencyCode', $currencyCode);
     }
 
 }
