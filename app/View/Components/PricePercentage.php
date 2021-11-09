@@ -37,6 +37,12 @@ class PricePercentage extends Component
         $this->priceChangePercentage1y = $priceChangePercentage1y;
     }
 
+
+    public function isPositive($value) {
+        return $value > 0 ?? false;
+    }
+
+    
     /**
      * Get the view / contents that represent the component.
      *

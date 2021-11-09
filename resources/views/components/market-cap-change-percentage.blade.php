@@ -5,7 +5,11 @@
         </div>
         <div class="flex-1 text-right md:text-center">
             <h5 class="font-bold uppercase text-gray-600">% Market Cap Change 24h</h5>
-            <h3 class="font-bold text-green-600 text-xl">{{ $percentage }}%</h3>
+            <h3 @class([
+                'font-bold', 
+                'text-red-600' => !$isPositive($percentage), 
+                'text-green-600' => $isPositive($percentage), 
+                'text-xl'])>{{ $percentage }}%</h3>
         </div>
     </div>
 </div>

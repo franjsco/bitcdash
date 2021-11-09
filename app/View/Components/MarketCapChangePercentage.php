@@ -17,6 +17,11 @@ class MarketCapChangePercentage extends Component
     {
         $this->percentage = $percentage;
     }
+    
+
+    public function isPositive($value) {
+        return $value > 0 ?? false;
+    }
 
     /**
      * Get the view / contents that represent the component.
