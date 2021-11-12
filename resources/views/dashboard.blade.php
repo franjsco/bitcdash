@@ -487,6 +487,12 @@
         ></x-fees>
         </div>
     </div>
+
+    <div class="text-center text-white">
+        <p>Developed with ❤️ by <a href="https://twitter.com/franjsco">Francesco Esposito(@franjsco)</a></p>
+    </div>
+        
+      
 </body>
 
 </html>
