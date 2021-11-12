@@ -410,10 +410,10 @@
 
 <body class="">
     <div class="m-4 flex">
-        <img src="{{ asset('images/logo.svg')}}" width="18%">
+        <img src="{{ asset('images/logo.svg')}}" width="260px">
     </div>
 
-    <div class="flex flex-wrap mb-8">
+    <div class="flex flex-wrap mb-6">
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <x-price 
                 :price="$data->price"
@@ -433,7 +433,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap mb-1">
+    <div class="flex flex-wrap">
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <x-low-high-price
                 :low24h="$data->low_24h"
@@ -451,7 +451,7 @@
     </div>
 
 
-    <div class="flex flex-wrap mb-1">
+    <div class="flex flex-wrap">
 
         <div class="w-full md:w-1/1 xl:w-1/3 p-6">
             <x-market-cap 
@@ -478,7 +478,7 @@
     </div>
     
     
-    <div class="flex flex-wrap mb-2">
+    <div class="flex flex-wrap">
         <div class="w-full md:w-1/1 xl:w-1/1 p-6">
         <x-fees 
             :fastest-fee="$data->fastest_fee"
