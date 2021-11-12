@@ -2,16 +2,20 @@
 
 ## Bitcdash
 
-Bitcdash is a web application  ...  such as:
+Bitcdash is a web application to view bitcoin-related information such as:
 
-- Simple.
-- Automatic.
-- ...
+- Current price & High/Low 24h.
+- Price change in percentage in the time.
+- Market sentiment (Crypto Fear & Greed Index).
+- Market Cap & changed percentage 
+- Fees
 
-Screenshot:
+
 <img src="screenshot.png">
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Supported currencies:
+
+EUR, USD, JPY, GBP, AUD, CAD, CHF, CNY, HKD.
 
 ## Configuration
 
