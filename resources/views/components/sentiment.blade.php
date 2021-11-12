@@ -10,7 +10,7 @@
                 <div class="relative pt-1">
                     <div class="flex mb-2 items-center justify-between">
                         <div>
-                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-black-600 bg-green-200">
+                            <span class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full  text-gray-100 {{$getColorBasedOnSentiment}}">
                                 {{$valueClassification}} - {{ $value }}
                             </span>
                         </div>
@@ -21,7 +21,7 @@
                         </div>
                     </div>
                     <div class="overflow-hidden h-2 mb-4 text-xs flex rounded bg-gray-200">
-                        <div style="width: {{ $value }}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-green-600"></div>
+                        <div style="width: {{ $value }}%" class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center {{$getColorBasedOnSentiment}}"></div>
                     </div>
                 </div>
             </div>
