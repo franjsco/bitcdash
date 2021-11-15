@@ -23,17 +23,19 @@ EUR, USD, JPY, GBP, AUD, CAD, CHF, CNY, HKD.
 2. Install dependencies with composer (in docker): 
 `docker run --rm -v $(pwd):/opt -w /opt laravelsail/php80-composer:latest composer install`.
 3. rename `.env.example` into `.env` and configure it.
-4. start docker containers: 
+4. configure currencies into `config/currencies.php`.
+5. start docker containers: 
 `./vendor/bin/sail up -d`.
-5. start queue worker:
+6. start queue worker:
 `./vendor/bin/sail artisan queue:work`.
-6. start scheduler:
+7. start scheduler:
 `./vendor/bin/sail artisan schedule:work`.
-
-
 
 
 ### Data
 - Price data from coingecko.com (with [coingecko-api](https://github.com/codenix-sv/coingecko-api))
-- Sentiment data from alternative.me (with [crypto-fear-greed-index-php](https://github.com/franjsco/crypto-fear-greed-index-php)
-- Fees data from bitcoinfees.earn.com (with [bitcoinfees-php](https://github.com/franjsco/bitcoinfees-php))
+- Sentiment data from alternative.me (with [crypto-fear-greed-index-php](https://github.com/franjsco/crypto-fear-greed-index-php)).
+- Fees data from bitcoinfees.earn.com (with [bitcoinfees-php](https://github.com/franjsco/bitcoinfees-php)).
+
+
+
