@@ -7,7 +7,7 @@ Bitcdash is a web application to view bitcoin-related information such as:
 - Current price & High/Low 24h.
 - Percentage price change over time.
 - Market sentiment (Crypto Fear & Greed Index).
-- Market Cap & changed percentage. 
+- Market Cap & Total volume. 
 - Fees prediction.
 
 
