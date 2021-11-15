@@ -16,7 +16,7 @@ return [
     [
         "code" => "usd",
         "symbol" => "$"
-    ],
+    ]/*, 
     [
         "code" => "jpy",
         "symbol" => "¥"
@@ -48,5 +48,5 @@ return [
     [
         "code" => "nzd",
         "symbol" => "NZ$"
-    ]
+    ] */
 ];
