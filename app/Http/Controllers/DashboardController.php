@@ -10,8 +10,8 @@ class DashboardController extends Controller
     
     public function index(Request $request)
     {
-        $currencyCode =  $request->input('currency', 'usd');
-
+        $currencyCode =  $request->input('currency', 'usd') ?? 'usd';
+        
         $extraction = ExtractionRepository::getLatestExtraction();
         
         $bitcoin = BitcoinRepository::getInformationByExtractionId(
