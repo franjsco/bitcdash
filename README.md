@@ -28,7 +28,9 @@ EUR, USD, JPY, GBP, AUD, CAD, CHF, CNY, HKD.
 `./vendor/bin/sail up -d`.
 6. start queue worker:
 `./vendor/bin/sail artisan queue:work`.
-7. start scheduler:
+7. Launch job:
+`./vendor/bin/sail artisan fetch:all`.
+8. start scheduler:
 `./vendor/bin/sail artisan schedule:work`.
 
 
