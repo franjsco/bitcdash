@@ -26,11 +26,13 @@ EUR, USD, JPY, GBP, AUD, CAD, CHF, CNY, HKD.
 4. configure currencies into `config/currencies.php`.
 5. start docker containers: 
 `./vendor/bin/sail up -d`.
-6. start queue worker:
+6. launch migrations:
+`./vendor/bin/sail artisan migrate`.
+7. start queue worker:
 `./vendor/bin/sail artisan queue:work`.
-7. Launch job:
+8. Launch job:
 `./vendor/bin/sail artisan fetch:all`.
-8. start scheduler:
+9. start scheduler:
 `./vendor/bin/sail artisan schedule:work`.
 
 
